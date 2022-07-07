@@ -43,6 +43,7 @@ function App() {
       <Button mutate={mutate} />
       <Image />
       <div>Hola</div>
+      <div>Que tal</div>
     </div>
   );
 }
