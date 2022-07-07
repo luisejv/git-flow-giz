@@ -42,6 +42,7 @@ function App() {
       <pre>{JSON.stringify(data?.results, null, 2)}</pre>
       <Button mutate={mutate} />
       <Image />
+      <div>Hola</div>
     </div>
   );
 }
