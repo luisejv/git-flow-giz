@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import useSWR from "swr";
 import "./App.css";
 import Button from "./components/Button";
+import Image from "./components/Image";
 import { ApiResponse } from "./types/user";
 
 const fetcher = (url: string): Promise<ApiResponse> => {
@@ -40,6 +41,7 @@ function App() {
     <div>
       <pre>{JSON.stringify(data?.results, null, 2)}</pre>
       <Button mutate={mutate} />
+      <Image />
     </div>
   );
 }
