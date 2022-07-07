@@ -2,6 +2,7 @@ import axios, { AxiosError, AxiosResponse } from "axios";
 import React, { useState } from "react";
 import useSWR from "swr";
 import "./App.css";
+import Button from "./components/Button";
 import { ApiResponse } from "./types/user";
 
 const fetcher = (url: string): Promise<ApiResponse> => {
@@ -26,7 +27,7 @@ function App() {
     `https://randomuser.me/api/?results=${results}`,
     fetcher,
     {
-      refreshInterval: 3000,
+      refreshInterval: 0,
       revalidateOnFocus: false,
       revalidateOnMount: true,
       revalidateOnReconnect: true,
@@ -38,7 +39,7 @@ function App() {
   return (
     <div>
       <pre>{JSON.stringify(data?.results, null, 2)}</pre>
-      <button onClick={() => mutate()}>Cambiar</button>
+      <Button mutate={mutate} />
     </div>
   );
 }
