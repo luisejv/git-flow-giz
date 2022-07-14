@@ -22,9 +22,9 @@ const fetcher = (url: string): Promise<ApiResponse> => {
 };
 
 function App() {
-  const [results, setResults] = useState<number>(1);
+  const [results] = useState<number>(1);
 
-  const { data, error, isValidating, mutate } = useSWR(
+  const { data, isValidating, mutate } = useSWR(
     `https://randomuser.me/api/?results=${results}`,
     fetcher,
     {
